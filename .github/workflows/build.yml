@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - main # or change to the name of your main branch
+      - main # or change the name of your main branch
 
 jobs:
   build:
