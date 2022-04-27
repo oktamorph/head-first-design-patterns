@@ -1,0 +1,16 @@
+﻿C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\Amplifier.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\DuckAdapter.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\DuckTestDrive.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\HomeTheaterFacade.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\HomeTheaterTestDrive.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\IDuck.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\ITurkey.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\MallardDuck.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\PopcornPopper.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\Projector.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\Screen.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\StreamingPlayer.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\TheaterLights.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\Tuner.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\TurkeyAdapter.cs
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\WildTurkey.cs

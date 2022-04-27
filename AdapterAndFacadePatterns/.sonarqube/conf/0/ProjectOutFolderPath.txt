@@ -1,0 +1,1 @@
+C:\Users\obolilyi\source\repos\head-first-design-patterns\AdapterAndFacadePatterns\.sonarqube\out\0
