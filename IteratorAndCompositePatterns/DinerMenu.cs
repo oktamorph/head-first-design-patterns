@@ -4,7 +4,7 @@
     {
         private static int MAX_ITEMS = 6;
         private int _numberOfItems = 0;
-        private MenuItem[] _menuItems;
+        private readonly MenuItem[] _menuItems;
         public DinerMenu()
         {
             _menuItems = new MenuItem[MAX_ITEMS];
@@ -18,7 +18,7 @@
         }
         public void AddItem(string name, string description, bool vegetarian, double price)
         {
-            MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
+            var menuItem = new MenuItem(name, description, vegetarian, price);
             if (_numberOfItems >= MAX_ITEMS)
             {
                 Console.WriteLine("Sorry, menu is full! Can't add item to menu");

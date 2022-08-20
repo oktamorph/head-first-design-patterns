@@ -1,18 +1,19 @@
 ﻿namespace IteratorAndCompositePatterns
 {
-    internal class CafeMenuIterator : Iterator<MenuItem>
+    internal class AlternatingDinerMenuIterator : Iterator<MenuItem>
     {
         private readonly MenuItem[] _items;
         private int _position = 0;
 
-        public CafeMenuIterator(MenuItem[] items)
+        public AlternatingDinerMenuIterator(MenuItem[] items)
         {
             this._items = items;
+            _position = (int)DateTime.Now.DayOfWeek % 2;
         }
         public MenuItem Next()
         {
-            var menuItem = _items[_position];
-            _position = _position + 1;
+            MenuItem menuItem = _items[_position];
+            _position = _position + 2;
 
             return menuItem;
         }
@@ -25,7 +26,7 @@
         }
         public void Remove()
         {
-            throw new InvalidOperationException("You shouldn't be trying to remove menu items.");
+            throw new InvalidOperationException("Alternating Diner Menu Iterator does not support remove().");
         }
     }
 }

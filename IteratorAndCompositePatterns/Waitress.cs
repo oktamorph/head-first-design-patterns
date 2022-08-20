@@ -2,9 +2,9 @@
 {
     public class Waitress
     {
-        private IMenu _pancakeHouseMenu;
-        private IMenu _dinerMenu;
-        private IMenu _cafeMenu;
+        private readonly IMenu _pancakeHouseMenu;
+        private readonly IMenu _dinerMenu;
+        private readonly IMenu _cafeMenu;
 
         public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu, IMenu cafeMenu)
         {
@@ -20,8 +20,10 @@
 
             Console.WriteLine("MENU\n----\nBREAKFAST");
             PrintMenu(pancakeIterator);
+
             Console.WriteLine("\nLUNCH");
             PrintMenu(dinerIterator);
+
             Console.WriteLine("\nDINNER");
             PrintMenu(cafeIterator);
         }

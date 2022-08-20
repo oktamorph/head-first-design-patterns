@@ -13,6 +13,7 @@
         {
             MenuItem menuItem = _items[_position];
             _position = _position + 1;
+
             return menuItem;
         }
         public bool HasNext()

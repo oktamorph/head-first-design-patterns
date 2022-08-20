@@ -2,7 +2,7 @@
 {
     public class PancakeHouseMenu : IMenu
     {
-        private List<MenuItem> _menuItems;
+        private readonly List<MenuItem> _menuItems;
         public PancakeHouseMenu()
         {
             _menuItems = new List<MenuItem>();
@@ -13,12 +13,12 @@
         }
         public void AddItem(string name, string description, bool vegetarian, double price)
         {
-            MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
+            var menuItem = new MenuItem(name, description, vegetarian, price);
             _menuItems.Add(menuItem);
         }
         public Iterator<MenuItem> CreateIterator()
         {
-            MenuItem[] items = new MenuItem[_menuItems.Count];
+            var items = new MenuItem[_menuItems.Count];
             
             for(var i = 0; i < items.Length; i++)
             {

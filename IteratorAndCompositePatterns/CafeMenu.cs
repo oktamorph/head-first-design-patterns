@@ -2,7 +2,7 @@
 {
     public class CafeMenu : IMenu
     {
-        Dictionary<string, MenuItem> menuItems = new Dictionary<string, MenuItem>();
+        private readonly Dictionary<string, MenuItem> _menuItems = new Dictionary<string, MenuItem>();
         public CafeMenu()
         {
             AddItem("Soup of the day", "A cup of the soup of the day, with a side salad", false, 3.69);
@@ -11,15 +11,15 @@
         }
         public void AddItem(string name, string description, bool vegetarian, double price)
         {
-            MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-            menuItems.Add(name, menuItem);
+            var menuItem = new MenuItem(name, description, vegetarian, price);
+            _menuItems.Add(name, menuItem);
         }
         public Iterator<MenuItem> CreateIterator()
         {
-            MenuItem[] items = new MenuItem[menuItems.Count];
+            var items = new MenuItem[_menuItems.Count];
             var counter = 0;
 
-            foreach(var item in menuItems)
+            foreach(var item in _menuItems)
             {
                 items[counter] = item.Value;
                 counter++;

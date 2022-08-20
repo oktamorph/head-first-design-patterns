@@ -2,10 +2,10 @@
 {
     public class MenuItem
     {
-        private string _name;
-        private string _description;
-        private double _price;
-        private bool _vegetarian;        
+        private readonly string _name;
+        private readonly string _description;
+        private readonly double _price;
+        private readonly bool _vegetarian;        
         public MenuItem(string name, string description, bool vegetarian, double price)
         {
             this._name = name;
