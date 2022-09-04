@@ -27,29 +27,39 @@
         //    Console.WriteLine("\nDINNER");
         //    PrintMenu(cafeIterator);
         //}
-        private readonly List<IMenu> _menus;
-        public Waitress(List<IMenu> menus)
+        //private readonly List<IMenu> _menus;
+        //public Waitress(List<IMenu> menus)
+        //{
+        //    this._menus = menus;
+        //}
+        //public void PrintMenu()
+        //{
+        //    var menuIterator = _menus.GetEnumerator();
+        //    while (menuIterator.MoveNext())
+        //    {
+        //        IMenu menu = menuIterator.Current;
+        //        PrintMenu(menu.CreateIterator());
+        //    }
+        //}
+        //private void PrintMenu(Iterator<MenuItem> iterator)
+        //{
+        //    while (iterator.HasNext())
+        //    {
+        //        MenuItem menuItem = iterator.Next();
+        //        Console.Write(menuItem.GetName() + ", ");
+        //        Console.Write(menuItem.GetPrice() + " -- ");
+        //        Console.WriteLine(menuItem.GetDescription());
+        //    }
+        //}
+
+        private MenuComponent _allMenus;
+        public Waitress(MenuComponent allMenus)
         {
-            this._menus = menus;
+            this._allMenus = allMenus;
         }
         public void PrintMenu()
         {
-            var menuIterator = _menus.GetEnumerator();
-            while (menuIterator.MoveNext())
-            {
-                IMenu menu = menuIterator.Current;
-                PrintMenu(menu.CreateIterator());
-            }
-        }
-        private void PrintMenu(Iterator<MenuItem> iterator)
-        {
-            while (iterator.HasNext())
-            {
-                MenuItem menuItem = iterator.Next();
-                Console.Write(menuItem.GetName() + ", ");
-                Console.Write(menuItem.GetPrice() + " -- ");
-                Console.WriteLine(menuItem.GetDescription());
-            }
+            _allMenus.Print();
         }
     }
 }

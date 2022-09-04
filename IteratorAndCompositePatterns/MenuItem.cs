@@ -1,11 +1,11 @@
 ﻿namespace IteratorAndCompositePatterns
 {
-    public class MenuItem
+    public class MenuItem : MenuComponent
     {
         private readonly string _name;
         private readonly string _description;
-        private readonly double _price;
-        private readonly bool _vegetarian;        
+        private readonly bool _vegetarian;
+        private readonly double _price;                
         public MenuItem(string name, string description, bool vegetarian, double price)
         {
             this._name = name;
@@ -28,6 +28,16 @@
         public bool IsVegetarian()
         {
             return _vegetarian;
+        }
+        public void Print()
+        {
+            Console.Write(" " + GetName());
+            if (IsVegetarian())
+            {
+                Console.Write("(v)");
+            }
+            Console.WriteLine(", " + GetPrice());
+            Console.Write("     -- " + GetDescription());
         }
     }
 }
