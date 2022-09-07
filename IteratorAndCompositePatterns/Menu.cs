@@ -36,9 +36,20 @@
             Console.WriteLine(", " + GetDescription());
             Console.WriteLine("---------------------");
 
-            foreach(var menuComponent in _menuComponents)
+            foreach (var menuComponent in _menuComponents)
             {
-                ((Menu)menuComponent).Print();
+                var menuType = menuComponent.GetType().ToString().Split('.')[1];
+                switch (menuType)
+                {
+                    case "Menu":
+                        ((Menu)menuComponent).Print();
+                        break;
+                    case "MenuItem":
+                        ((MenuItem)menuComponent).Print();
+                        break;
+                    default:                        
+                        break;
+                }
             }
         }
     }

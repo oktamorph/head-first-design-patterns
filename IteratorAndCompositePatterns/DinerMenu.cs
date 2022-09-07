@@ -28,7 +28,7 @@
                 counter++;
             }
 
-            return new CafeMenuIterator(items);
+            return new DinerMenuIterator(items);
         }
     }
 }

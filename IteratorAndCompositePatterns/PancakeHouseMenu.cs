@@ -26,7 +26,7 @@
                 counter++;
             }
 
-            return new CafeMenuIterator(items);
+            return new PancakeHouseMenuIterator(items);
         }
     }
 }

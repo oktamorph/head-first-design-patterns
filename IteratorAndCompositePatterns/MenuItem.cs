@@ -37,7 +37,7 @@
                 Console.Write("(v)");
             }
             Console.WriteLine(", " + GetPrice());
-            Console.Write("     -- " + GetDescription());
+            Console.WriteLine("     -- " + GetDescription());
         }
     }
 }
