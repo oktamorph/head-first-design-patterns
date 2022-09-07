@@ -59,7 +59,7 @@
         }
         public void PrintMenu()
         {
-            _allMenus.Print();
+            ((Menu)_allMenus).Print();
         }
     }
 }

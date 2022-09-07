@@ -10,7 +10,7 @@
         {
             throw new NotSupportedException();
         }
-        public MenuComponent GetChild(int i)
+        public MenuComponent GetChild(int i) 
         {
             throw new NotSupportedException();
         }

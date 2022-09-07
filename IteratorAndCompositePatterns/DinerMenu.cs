@@ -2,13 +2,9 @@
 {
     public class DinerMenu : IMenu
     {
-        private static int MAX_ITEMS = 6;
-        private int _numberOfItems = 0;
-        private readonly MenuItem[] _menuItems;
+        private readonly Dictionary<string, MenuItem> _menuItems = new Dictionary<string, MenuItem>();
         public DinerMenu()
         {
-            _menuItems = new MenuItem[MAX_ITEMS];
-
             AddItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
             AddItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99);
             AddItem("Soup of the day", "Soup of the day, with a side of potato salad", false, 3.29);
@@ -19,19 +15,20 @@
         public void AddItem(string name, string description, bool vegetarian, double price)
         {
             var menuItem = new MenuItem(name, description, vegetarian, price);
-            if (_numberOfItems >= MAX_ITEMS)
-            {
-                Console.WriteLine("Sorry, menu is full! Can't add item to menu");
-            }
-            else
-            {
-                _menuItems[_numberOfItems] = menuItem;
-                _numberOfItems = _numberOfItems + 1;
-            }
+            _menuItems.Add(name, menuItem);
         }
         public Iterator<MenuItem> CreateIterator()
         {
-            return new DinerMenuIterator(_menuItems);
+            var items = new MenuItem[_menuItems.Count];
+            var counter = 0;
+
+            foreach (var item in _menuItems)
+            {
+                items[counter] = item.Value;
+                counter++;
+            }
+
+            return new CafeMenuIterator(items);
         }
     }
 }
