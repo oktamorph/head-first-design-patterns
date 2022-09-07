@@ -4,21 +4,6 @@
     {
         public static void Main(string[] args)
         {
-            //PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-            //DinerMenu dinerMenu = new DinerMenu();
-            //CafeMenu cafeMenu = new CafeMenu();
-
-            //Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
-            //waitress.PrintMenu();
-
-            //List<MenuItem> menu = new List<MenuItem>();
-            //foreach (MenuItem item in menu)
-            //{
-            //    Console.WriteLine(item.GetName() + ", ");
-            //    Console.WriteLine(item.GetPrice() + " -- ");
-            //    Console.WriteLine(item.GetDescription());
-            //}
-
             MenuComponent pancakeHouseMenu = new Menu("PANCAKE HOUSE MENU", "Breakfast");
             MenuComponent dinerMenu = new Menu("DINER MENU", "Lunch");
             MenuComponent cafeMenu = new Menu("CAFE MENU", "Dinner");
