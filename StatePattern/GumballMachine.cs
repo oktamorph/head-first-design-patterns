@@ -14,29 +14,21 @@
         {
             this._count = count;
             if (count > 0)
-            {
                 _state = NO_QUARTER;
-            }
         }
         public void InsertQuarter()
         {
             if (_state == HAS_QUARTER)
-            {
                 Console.WriteLine("You can't insert another quarter");
-            }
             else if (_state == NO_QUARTER)
             {
                 _state = HAS_QUARTER;
                 Console.WriteLine("You inserted a quarter");
             }
             else if (_state == SOLD_OUT)
-            {
                 Console.WriteLine("You can't insert a quarter, the machine is sold out");
-            }
             else if (_state == SOLD)
-            {
                 Console.WriteLine("Please wait, we're already giving you a gumball");
-            }
         }
         public void EjectQuarter()
         {
@@ -46,32 +38,20 @@
                 _state = NO_QUARTER;
             }
             else if (_state == NO_QUARTER)
-            {
                 Console.WriteLine("You haven't inserted a quarter");
-            }
             else if (_state == SOLD)
-            {
                 Console.WriteLine("Sorry, you already turned the crank");
-            }
             else if (_state == SOLD_OUT)
-            {
                 Console.WriteLine("You can't eject, you haven't inserted a quarter yet");
-            }
         }
         public void TurnCrank()
         {
             if (_state == SOLD)
-            {
                 Console.WriteLine("Turning twice doesn't get you another gumball!");
-            }
             else if (_state == NO_QUARTER)
-            {
                 Console.WriteLine("You turned but there's no quarter");
-            }
             else if (_state == SOLD_OUT)
-            {
                 Console.WriteLine("You turned but there are no gumballs");
-            }
             else if (_state == HAS_QUARTER)
             {
                 Console.WriteLine("You turned...");
@@ -91,22 +71,14 @@
                     _state = SOLD;
                 }
                 else
-                {
                     _state = NO_QUARTER;
-                }
             }
-            else if(_state == NO_QUARTER)
-            {
+            else if (_state == NO_QUARTER)
                 Console.WriteLine("You need yo pay first");
-            }
-            else if(_state == SOLD_OUT)
-            {
+            else if (_state == SOLD_OUT)
                 Console.WriteLine("No gumball dispensed");
-            }
-            else if(_state == HAS_QUARTER)
-            {
+            else if (_state == HAS_QUARTER)
                 Console.WriteLine("You need to turn the crank");
-            }
         }
 
         //  other methods here like ToString() and Refill()
