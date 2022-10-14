@@ -1,6 +1,6 @@
 ﻿namespace StatePattern
 {
-    internal interface IState
+    public interface IState
     {
         void InsertQuarter();
         void EjectQuarter();
