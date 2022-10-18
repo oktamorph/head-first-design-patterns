@@ -1,4 +1,6 @@
-﻿namespace StatePattern
+﻿using System.Text;
+
+namespace StatePattern
 {
     public class GumballMachine
     {
@@ -6,6 +8,7 @@
         private readonly IState _noQuarterState;
         private readonly IState _hasQuarterState;
         private readonly IState _soldState;
+        private readonly IState _winnerState;
 
         private IState _state;
         private int _count = 0;
@@ -46,13 +49,36 @@
             if (_count > 0)
                 _count = _count - 1;
         }
-        public void GetNoQuarterState()
+        public IState GetNoQuarterState()
         {
-
+            return _noQuarterState;
         }
-        public void GetCount()
+        public IState GetSoldOutState()
         {
+            return _soldOutState;
+        }
+        public IState GetHasQuarterState()
+        {
+            return _hasQuarterState;
+        }
+        public IState GetSoldState()
+        {
+            return _soldState;
+        }
+        public int GetCount()
+        {
+            return _count;
+        }
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            
+            stringBuilder.Append("Mighty Gumball, Inc.");
+            stringBuilder.Append("\nC#-enabled Standing Gumball Model #2004");
+            stringBuilder.Append($"\nInventory: {_count} gumballs");
+            stringBuilder.Append("\nMachine is waiting for quarter");
 
+            return stringBuilder.ToString();
         }
     }
 
