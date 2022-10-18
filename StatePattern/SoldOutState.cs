@@ -3,32 +3,26 @@
     public class SoldOutState : IState
     {
         private readonly GumballMachine _gumballMachine;
+
         public SoldOutState(GumballMachine gumballMachine)
         {
             this._gumballMachine = gumballMachine;
         }
         public void InsertQuarter()
         {
-            Console.WriteLine("Please wait, we're already giving you a gumball");
+            Console.WriteLine("You can't insert a quarter, the machine is sold out");
         }
         public void EjectQuarter()
         {
-            Console.WriteLine("Sorry, you already turned the crank");
+            Console.WriteLine("You can't eject, you haven't inserted a quarter yet");
         }
         public void TurnCrank()
         {
-            Console.WriteLine("Turning twice doesn't get you another gumball!");
+            Console.WriteLine("You turned, but there are no gumballs");
         }
         public void Dispense()
         {
-            _gumballMachine.ReleaseBall();
-            if (_gumballMachine.GetCount() > 0)
-                _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
-            else
-            {
-                Console.WriteLine("Oops, out of gumballs!");
-                _gumballMachine.SetState(_gumballMachine.GetSoldOutState());
-            }
+            Console.WriteLine("No gumball dispensed");
         }
     }
 }
