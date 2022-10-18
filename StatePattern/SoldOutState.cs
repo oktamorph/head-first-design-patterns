@@ -24,5 +24,9 @@
         {
             Console.WriteLine("No gumball dispensed");
         }
+        public void Refill()
+        {
+            _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
+        }
     }
 }

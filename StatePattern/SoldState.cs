@@ -30,5 +30,6 @@
                 _gumballMachine.SetState(_gumballMachine.GetSoldOutState());
             }
         }
+        public void Refill() { }
     }
 }

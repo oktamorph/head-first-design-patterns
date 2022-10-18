@@ -85,6 +85,12 @@ namespace StatePattern
 
             return stringBuilder.ToString();
         }
+        public void Refill(int count)
+        {
+            _count = count;
+            Console.WriteLine("The gumball machine we just refilled; its new count is: " + this._count);
+            _state.Refill();
+        }
     }
 
     public class GumballMachineTestDrive
@@ -106,6 +112,7 @@ namespace StatePattern
             gumballMachine.TurnCrank();
 
             Console.WriteLine("\n" + gumballMachine);
+            gumballMachine.Refill(3);
         }
     }
 }

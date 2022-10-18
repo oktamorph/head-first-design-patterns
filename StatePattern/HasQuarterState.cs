@@ -35,5 +35,6 @@
             DateTime Oct18th2022 = new DateTime(2022, 10, 18, 0, 0, 0, DateTimeKind.Utc);
             return (int)(DateTime.UtcNow - Oct18th2022).TotalMilliseconds;
         }
+        public void Refill() { }
     }
 }

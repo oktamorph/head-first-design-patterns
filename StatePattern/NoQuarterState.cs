@@ -24,5 +24,6 @@
         {
             Console.WriteLine("You need to pay first");
         }
+        public void Refill() { }
     }
 }
