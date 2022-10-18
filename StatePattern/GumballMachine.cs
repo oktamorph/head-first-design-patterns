@@ -19,6 +19,7 @@ namespace StatePattern
             _noQuarterState = new NoQuarterState(this);
             _hasQuarterState = new HasQuarterState(this);
             _soldState = new SoldState(this);
+            _winnerState = new WinnerState(this);
 
             this._count = numberGumballs; ;
             if (numberGumballs > 0)
@@ -65,6 +66,10 @@ namespace StatePattern
         {
             return _soldState;
         }
+        public IState GetWinnerState()
+        {
+            return _winnerState;
+        }
         public int GetCount()
         {
             return _count;
@@ -72,11 +77,11 @@ namespace StatePattern
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            
+
             stringBuilder.Append("Mighty Gumball, Inc.");
             stringBuilder.Append("\nC#-enabled Standing Gumball Model #2004");
             stringBuilder.Append($"\nInventory: {_count} gumballs");
-            stringBuilder.Append("\nMachine is waiting for quarter");
+            stringBuilder.Append("\nMachine is waiting for quarter\n");
 
             return stringBuilder.ToString();
         }
@@ -88,40 +93,19 @@ namespace StatePattern
         {
             GumballMachine gumballMachine = new GumballMachine(5);
 
-            Console.WriteLine(gumballMachine + "\n\t");
+            Console.WriteLine(gumballMachine);
 
             gumballMachine.InsertQuarter();
             gumballMachine.TurnCrank();
 
-            Console.WriteLine();
-            Console.WriteLine(gumballMachine + "\n\t");
-
-            gumballMachine.InsertQuarter();
-            gumballMachine.EjectQuarter();
-            gumballMachine.TurnCrank();
-
-            Console.WriteLine();
-            Console.WriteLine(gumballMachine + "\n\t");
+            Console.WriteLine("\n" + gumballMachine);
 
             gumballMachine.InsertQuarter();
             gumballMachine.TurnCrank();
             gumballMachine.InsertQuarter();
             gumballMachine.TurnCrank();
-            gumballMachine.EjectQuarter();
 
-            Console.WriteLine();
-            Console.WriteLine(gumballMachine + "\n\t");
-
-            gumballMachine.InsertQuarter();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-            gumballMachine.InsertQuarter();
-            gumballMachine.TurnCrank();
-
-            Console.WriteLine();
-            Console.WriteLine(gumballMachine + "\n\t");
+            Console.WriteLine("\n" + gumballMachine);
         }
     }
 }
