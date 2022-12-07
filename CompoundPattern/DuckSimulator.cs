@@ -12,17 +12,19 @@ namespace CompoundPattern
         public static void Main(string[] args)
         {
             DuckSimulator simulator = new DuckSimulator();
-            simulator.Simulate();
+            AbstractDuckFactory duckFactory = new CountingDuckFactory();
+
+            simulator.Simulate(duckFactory);
         }
-        private void Simulate()
+        private void Simulate(AbstractDuckFactory duckFactory)
         {
-            IQuackable mallardDuck = new QuackCounter(new MallardDuck());
-            IQuackable redheadDuck = new QuackCounter(new RedheadDuck());
-            IQuackable duckCall = new QuackCounter(new DuckCall());
-            IQuackable rubberDuck = new QuackCounter(new RubberDuck());
+            IQuackable mallardDuck = duckFactory.CreateMallardDuck();
+            IQuackable redheadDuck = duckFactory.CreateRedheadDuck();
+            IQuackable duckCall = duckFactory.CreateDuckCall();
+            IQuackable rubberDuck = duckFactory.CreateRubberDuck();
             IQuackable gooseDuck = new GooseAdapter(new Goose());
 
-            Console.WriteLine("\nDuck Simulator");
+            Console.WriteLine("Duck Simulator");
 
             Simulate(mallardDuck);
             Simulate(redheadDuck);
