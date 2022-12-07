@@ -18,7 +18,7 @@ namespace CompoundPattern
         }
         public override IQuackable CreateDuckCall()
         {
-            return new QuackCounter(new RedheadDuck());
+            return new QuackCounter(new DuckCall());
         }
         public override IQuackable CreateRubberDuck()
         {
