@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CompoundPattern
 {
-    public interface IQuackable : IQuackObservable
+    public interface IObserver
     {
-        public void Quack();
+        public void Update(IQuackObservable duck);
     }
 }

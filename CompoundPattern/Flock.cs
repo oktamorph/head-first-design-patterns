@@ -8,19 +8,25 @@ namespace CompoundPattern
 {
     public class Flock : IQuackable
     {
-        List<IQuackable> quackers = new List<IQuackable>();
+        List<IQuackable> _quackers = new List<IQuackable>();
         public void Add(IQuackable quacker)
         {
-            quackers.Add(quacker);
+            _quackers.Add(quacker);
         }
         public void Quack()
         {
-            IEnumerator<IQuackable> iterator = quackers.GetEnumerator();
-            while (iterator.MoveNext())
+            foreach (var quacker in _quackers)
             {
-                IQuackable quacker = iterator.Current;
                 quacker.Quack();
             }
         }
+        public void RegisterObserver(IObserver observer)
+        {
+            foreach (var quacker in _quackers)
+            {
+                quacker.RegisterObserver(observer);
+            }
+        }
+        public void NotifyObservers() { }
     }
 }

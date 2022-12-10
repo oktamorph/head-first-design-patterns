@@ -46,11 +46,16 @@ namespace CompoundPattern
 
             flockOfDucks.Add(flockOfMallards);
 
-            Console.WriteLine("Duck Simulator: Whole Flock Simulation");
-            Simulate(flockOfDucks);
+            //Console.WriteLine("Duck Simulator: Whole Flock Simulation");
+            //Simulate(flockOfDucks);
 
-            Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation");
-            Simulate(flockOfMallards);
+            //Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation");
+            //Simulate(flockOfMallards);
+
+            Console.WriteLine("\nDuck Simulator: With Observer");
+            Quackologist quackologist = new Quackologist();
+            flockOfDucks.RegisterObserver(quackologist);
+            Simulate(flockOfDucks);
 
             Console.WriteLine("The ducks quacked  " + QuackCounter.GetQuacks() + " times");
         }

@@ -23,5 +23,13 @@ namespace CompoundPattern
         {
             return _numberOfQuacks;
         }
+        public void RegisterObserver(IObserver observer)
+        {
+            _duck.RegisterObserver(observer);
+        }
+        public void NotifyObservers()
+        {
+            _duck.NotifyObservers();
+        }
     }
 }
